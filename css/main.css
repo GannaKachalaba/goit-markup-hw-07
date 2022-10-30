@@ -904,13 +904,13 @@ body {
 }
 
 .footer-social {
-  margin-right: 70px;
+  display: flex;
   align-items: baseline;
   flex-direction: column;
 }
 
 .footer-social.second {
-  margin: 0;
+  margin-left: 70px;
 }
 
 .conteiner.social {
