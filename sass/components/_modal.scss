@@ -100,16 +100,6 @@ margin-bottom: 4px;
   margin-bottom: 4px;
 }
 
-.textarea::placeholder {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-
 .textarea {
   resize: none;
   width: 100%;
@@ -119,8 +109,16 @@ margin-bottom: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline-color: var(--accent-color);
+  &::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+ }
 }
-
 
 .form-input {
   width: 100%;
@@ -130,6 +128,12 @@ margin-bottom: 4px;
   border-radius: 4px;
   cursor: pointer;
   outline-color: var(--accent-color);
+  &:focus-within,
+  &:hover {
+  border-color: var(--accent-color);
+  padding-left: 42px;
+  transition: transform var(--transition-time);
+ }
 }
 
 .form-checkbox input[type="checkbox"] {
@@ -152,6 +156,11 @@ margin-bottom: 4px;
   left: 14px;
   transform: translateY(-50%);
   transition: transform var(--transition-time);
+  .form-input:focus ~ &,
+  .form-input:hover ~ & {
+  fill: var(--accent-color);
+  transition: transform var(--transition-time);
+  }
 }
 
 .checkbox {
@@ -184,6 +193,11 @@ margin-bottom: 4px;
   height: 16px;
   border: 2px solid var(--title-text-color);
   border-radius: 4px;
+  &:focus,
+  &:hover {
+  fill: var(--accent-color);
+  transition: background-color var(--transition-time);
+ }
 }
 
 .checkbox {
@@ -230,23 +244,4 @@ margin-bottom: 4px;
   display: block;
   margin-top: 30px;
   padding-left: 125px;
-}
-
-.form-input:focus ~ .icon-modal,
-.form-input:hover ~ .icon-modal {
-  fill: var(--accent-color);
-  transition: transform var(--transition-time);
-}
-
-.form-input:focus-within,
-.form-input:hover {
-  border-color: var(--accent-color);
-  padding-left: 42px;
-  transition: transform var(--transition-time);
-}
-
-.icon-close:focus,
-.icon-close:hover {
-  fill: var(--accent-color);
-  transition: background-color var(--transition-time);
 }
